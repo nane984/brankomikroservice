@@ -20,7 +20,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <!-- parent project dependency all define in dependencyManagement  -->
+    <!-- Moramo da stavimo i u child -->
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -32,8 +32,8 @@
         </dependencies>
     </dependencyManagement>
 
-    <!-- separate dependency for modules -->
-    <!-- konkretnu verziju stavljamo u module-->
+
+    <!-- Nemoramo da stavimo i u child -->
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -44,5 +44,17 @@
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
     </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring.boot.maven.plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
 </project>
