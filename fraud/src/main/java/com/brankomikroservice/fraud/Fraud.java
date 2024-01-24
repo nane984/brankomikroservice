@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Builder
 @Data
 @Entity
-public class FraudCheckHistory {
+public class Fraud {
     @Id
     @SequenceGenerator(
             name = "fraud_id_sequence",
