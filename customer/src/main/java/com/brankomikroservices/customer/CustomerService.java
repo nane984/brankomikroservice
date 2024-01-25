@@ -1,14 +1,12 @@
 package com.brankomikroservices.customer;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+@AllArgsConstructor
 @Service
 public class CustomerService {
     private final CustomerRepository customerRepository;
-
-    public CustomerService(CustomerRepository customerRepository){
-        this.customerRepository=customerRepository;
-    }
 
     public void registerCustomer(CustomerRegistrationRequest customerRegistrationRequest) {
         Customer customer = Customer.builder()

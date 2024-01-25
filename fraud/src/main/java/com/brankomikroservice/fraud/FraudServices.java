@@ -1,15 +1,14 @@
 package com.brankomikroservice.fraud;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
+@AllArgsConstructor
 @Service
 public class FraudServices {
     private final FraudRepository fraudRepository;
-    public FraudServices(FraudRepository fraudRepository){
-        this.fraudRepository = fraudRepository;
-    }
 
     public boolean isFraudulentCustomer(Integer customerId){
         Fraud fraud = Fraud.builder()
