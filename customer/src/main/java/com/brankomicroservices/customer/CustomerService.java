@@ -1,7 +1,7 @@
 package com.brankomicroservices.customer;
 
-import com.brankomicroservices.client.fraud.FraudCheckResponse;
-import com.brankomicroservices.client.fraud.FraudClient;
+import com.brankomicroservices.clients.fraud.FraudCheckResponse;
+import com.brankomicroservices.clients.fraud.FraudClient;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

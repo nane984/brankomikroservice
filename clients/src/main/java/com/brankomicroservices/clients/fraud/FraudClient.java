@@ -1,4 +1,4 @@
-package com.brankomicroservices.client.fraud;
+package com.brankomicroservices.clients.fraud;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
