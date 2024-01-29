@@ -1,4 +1,4 @@
-package com.brankomikroservice.fraud;
+package com.brankomicroservice.fraud;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

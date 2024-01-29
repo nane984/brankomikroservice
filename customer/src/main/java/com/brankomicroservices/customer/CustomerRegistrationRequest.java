@@ -1,4 +1,4 @@
-package com.brankomikroservices.customer;
+package com.brankomicroservices.customer;
 
 public record CustomerRegistrationRequest(String firstName, String lastName, String email) {
 }

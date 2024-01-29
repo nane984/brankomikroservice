@@ -1,4 +1,4 @@
-package com.brankomikroservices.customer;
+package com.brankomicroservices.customer;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -1,4 +1,4 @@
-package com.brankomikroservices.customer;
+package com.brankomicroservices.customer;
 
 
 import lombok.AllArgsConstructor;

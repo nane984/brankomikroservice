@@ -1,14 +1,15 @@
-package com.brankomikroservices.customer;
+package com.brankomicroservices.customer;
 
+import com.brankomicroservices.client.fraud.FraudCheckResponse;
+import com.brankomicroservices.client.fraud.FraudClient;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 @AllArgsConstructor
 @Service
 public class CustomerService {
     private final CustomerRepository customerRepository;
-    private final RestTemplate restTemplate;
+    private final FraudClient fraudClient;
 
     public void registerCustomer(CustomerRegistrationRequest customerRegistrationRequest) {
         Customer customer = Customer.builder()
@@ -21,11 +22,7 @@ public class CustomerService {
         customerRepository.saveAndFlush(customer);  //da bi sacekao da sacuva i da bi onda imali id
 
         //todo: check if fraudster
-        FraudCheckResponse fraudCheckResponse = restTemplate.getForObject(
-                "http://FRAUD/api/v1/fraud-check/{customerId}",
-                FraudCheckResponse.class,
-                customer.getId()
-        );
+        FraudCheckResponse fraudCheckResponse = fraudClient.isFraudster(customer.getId());
 
         if (fraudCheckResponse.isFraudster()){
             throw new IllegalStateException("Fraudster");

@@ -1,4 +1,4 @@
-package com.brankomikroservices.eurekaserver;
+package com.brankomicroservices.eurekaserver;
 
 
 import org.springframework.boot.SpringApplication;
