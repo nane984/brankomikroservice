@@ -2,6 +2,8 @@ package com.brankomicroservices.customer;
 
 import com.brankomicroservices.clients.fraud.FraudCheckResponse;
 import com.brankomicroservices.clients.fraud.FraudClient;
+import com.brankomicroservices.clients.notification.NotificationClient;
+import com.brankomicroservices.clients.notification.NotificationRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Service;
 public class CustomerService {
     private final CustomerRepository customerRepository;
     private final FraudClient fraudClient;
+    private final NotificationClient notificationClient;
 
     public void registerCustomer(CustomerRegistrationRequest customerRegistrationRequest) {
         Customer customer = Customer.builder()
@@ -30,5 +33,11 @@ public class CustomerService {
 
 
         //todo: send notification
+        notificationClient.sendNotification(
+                new NotificationRequest(
+                        customer.getId(),
+                        customer.getEmail(),
+                        String.format("Hi %s, welcome to branko...",customer.getFirstName()))
+        );
     }
 }

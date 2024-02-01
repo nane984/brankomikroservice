@@ -1,4 +1,4 @@
-package com.brankomicroservices.notification;
+package com.brankomicroservices.clients.notification;
 
 public record NotificationRequest(
         Integer toCustomerId,

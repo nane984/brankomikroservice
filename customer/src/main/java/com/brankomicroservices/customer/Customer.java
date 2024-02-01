@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 
-@Data
+@Data  ////@Setters @Getters @toString ....
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
